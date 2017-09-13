@@ -24,5 +24,6 @@ if(!empty($_POST)){
     
 }
 
-echo '<h3 style="color:red">ERROR AL INICIAR  SESION</h3>';
+
+header("Location: errorUsuarioVista.php");
 

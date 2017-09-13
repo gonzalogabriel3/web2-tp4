@@ -12,6 +12,7 @@
 <body class="container" style="background-color: #53F59C">
         
 <header style="background-color: #28B5C6">
+    <a href="indexSinLog.php" style="display: inline-block"><img src="imagenes/home.png" style="width: 30px;"/>Home</a>
     <center><b><h2 style="display: inline-block;">Trabajo practico IV</h2></b></center>
 </header>
     <br>        
