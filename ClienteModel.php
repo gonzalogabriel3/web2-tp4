@@ -108,6 +108,7 @@ Class ClienteModel{
                   ."apellido = ?,"
                   ."nombre = ?,"
                   ."edad = ?,"
+                  . "fecha_nacimiento = ?,"
                   ."nacionalidad = ?,"
                   ."activo = ?"
                   ."WHERE id = ?";
@@ -118,6 +119,7 @@ Class ClienteModel{
                        $data->__get('apellido'),
                        $data->__get('nombre'),
                        $edad,
+                       $data->__get('fechaNac'), 
                        $data->__get('nacionalidad'),
                        $data->__get('activo'),
                        $data->__get('id')
@@ -136,8 +138,8 @@ Class ClienteModel{
       $edad= $this->calcularEdad($data->__get('fechaNac'));
       
       try{
-          $sql="INSERT INTO clientes (apellido,nombre,edad,nacionalidad,activo)"
-                  . "VALUES (?,?,?,?,?)";
+          $sql="INSERT INTO clientes (apellido,nombre,edad,fecha_nacimiento,nacionalidad,activo)"
+                  . "VALUES (?,?,?,?,?,?)";
           
           $this->pdo->prepare($sql)
                   ->execute(
@@ -145,6 +147,7 @@ Class ClienteModel{
                          $data->__get('apellido'),
                          $data->__get('nombre'),
                          $edad,
+                         $data->__get('fechaNac'),
                          $data->__get('nacionalidad'),
                          $data->activo
                      )     

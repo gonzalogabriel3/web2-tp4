@@ -4,6 +4,9 @@ require_once 'ClienteLogica.php';
 require 'cabecera.php';
 require 'validarSesion.php';
 
+//Desactivo los "Notice"
+error_reporting (0);
+
 /*Valido y guardo el id del cliente que se me pasa por parametro en la url*/
 $idCliente='';
 
@@ -61,7 +64,7 @@ $cliente=$modelo->Obtener($idCliente);
     <?php $tiene_error=$miFormulario->tieneError('fecha')? "has-error" : "";?>
     <div class="form-group">
         <label class="control-label" for="fec">Fecha</label>
-        <input type="date" class="form-control" name="fecha" id="fec" value="<?php echo $cliente->fechaNac; ?>"/>
+        <input type="date" class="form-control" name="fecha" id="fec" value="<?php echo  $cliente->fechaNac ;?>"/>
         <span class="help-block" style="color:red"><?php echo $miFormulario->getError('fecha');?></span>
     </div> 
   
